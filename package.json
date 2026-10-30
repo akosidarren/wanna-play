@@ -1,0 +1,8 @@
+{
+  "name": "obby-race-daa-lalaaa",
+  "version": "1.0.0",
+  "description": "A cute multiplayer obby racing game for daa and lalaaa",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2", "socket.io": "^4.8.1" }
+}

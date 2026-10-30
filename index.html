@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>OBBY RACE — daa & lalaaa Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <div class="eyebrow">💙 💗 MULTIPLAYER OBBY RACE</div>
+      <h1>OBBY RACE</h1>
+      <h2>daa &amp; lalaaa <span>Edition</span></h2>
+      <p>Race, jump, dodge obstacles, and reach the finish!</p>
+      <label>Your player name</label>
+      <input id="playerName" maxlength="16" value="daa" placeholder="Enter name">
+      <div class="actions">
+        <button id="createBtn" class="primary">Play Solo</button>
+        <button id="joinBtn">Join Room</button>
+      </div>
+      <div id="joinFields" class="hidden">
+        <label>Room code</label>
+        <input id="roomCode" maxlength="6" placeholder="e.g. A7K2Q">
+        <button id="confirmJoinBtn" class="primary">Join Game</button>
+      </div>
+      <div id="status" role="status">Play Solo works without a server. Start the Node.js server for multiplayer.</div>
+      <div class="small">Up to 8 players · PC and mobile · Checkpoints</div>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div class="hud-left"><strong>OBBY RACE</strong><span id="roomLabel">Not connected</span></div>
+    <div class="hud-center" id="raceStatus">Reach the finish!</div>
+    <div class="hud-right"><span id="playerCount">1/8 players</span><button id="leaveBtn">Leave</button></div>
+  </div>
+  <div id="toast"></div>
+  <div id="mobileControls">
+    <div class="pad">
+      <button data-move="forward">▲</button>
+      <div><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div>
+    </div>
+    <button id="jumpBtn" class="jump">JUMP</button>
+  </div>
+  <div id="finishModal" class="overlay hidden">
+    <div class="panel winner">
+      <div class="trophy">🏆</div><h1>FINISH!</h1>
+      <h2 id="winnerText">You made it!</h2>
+      <p>Great race! Wait for your friends or start again.</p>
+      <button id="restartBtn" class="primary">Race Again</button>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
